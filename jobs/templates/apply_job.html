@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply job</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="main-menu">
+        <h1>job Portal</h1>
+        <ul>
+            <li><a href="{% url 'user_home' %}">HOME</a></li>
+            <li><a href="{% url 'view_job' %}">view job post</a></li>
+            <li><a href="{% url 'view_status' %}">view apply status</a></li>
+            <li><a href="{% url 'index' %}">logout</a></li>
+        </ul>
+    </div>
+    <div class="form">
+        <form action="{% url 'apply_job' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token%}
+            <h1>User Apply job</h1>
+            <div class="input">
+                <label for="">name</label>
+                    <input type="text" name="name">
+                
+            </div>
+            <div class="input">
+                <label for="">data of birth </label>
+                    <input type="text" name="company">
+               
+            </div>
+            <div class="input">
+                <label for="">email</label>
+                    <input type="text" name="email">
+                
+            </div>
+            <div class="input">
+                <label for="">phone number</label>
+                    <input type="text" name="phonenumber">
+                
+            </div>
+            <div class="input">
+                <label for="">qualification</label>
+                    <input type="text" name="qualification">
+                
+            </div>
+            <div class="input">
+                <label for="">Address </label>
+                    <input type="text" name="address">
+               
+            </div>
+            <div class="input">
+                <label for="">pincode</label>
+                    <input type="text" name="jobrole">
+                
+            </div>
+            <div class="input">
+                <label for="">Resume</label>
+                    <input type="file" name="resume">
+                
+            </div>
+            <button>apply</button>{{message}}
+        </form>
+    </div>
+</body>
+</html>

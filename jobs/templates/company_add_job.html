@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="main-menu">
+        <h1>job portal</h1>
+        <ul>
+            <li><a href="{% url 'user_home' %}">HOME</a></li>
+            <li><a href="{% url 'add_job' %}">Add job post</a></li>
+            <li><a href="{% url 'view_application' %}">view apply status</a></li>
+            <li><a href="{% url 'index' %}">logout</a></li>
+        </ul>
+     </div>
+    <div class="form">
+        <form action="{% url 'add_job' %}" method="post">
+            <h1>Company Add Job</h1>
+            {% csrf_token %}
+            <div class="input">
+                <label for="">Title</label>
+                    <input type="text" name="title">
+                
+                </div>
+                <div class="input">
+                    <label for="">Description</label>
+                        <input type="text" name="description">
+                    
+                </div>
+                <div class="input">
+                    <label for="">Company</label>
+                        <input type="text" name="company">
+                    
+                </div>
+                <div class="input">
+                    <label for="">Location</label>
+                        <input type="text" name="location">
+                    
+                </div>
+                <div class="input">
+                    <label for="">Salary</label>
+                        <input type="text" name="salary">
+                    
+                </div>
+                <div class="input">
+                    <label for="">Experience </label>
+                        <input type="text" name="experience">
+                   
+                </div>
+            <button>Add Job</button>
+        </form>
+    </div>
+</body>
+</html>

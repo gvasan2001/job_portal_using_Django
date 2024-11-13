@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company login</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="main-menu">
+        <h2>Job Portal</h2>
+        <a href="{% url 'index' %}">LOGOUT</a>
+    </div>
+
+    <div class="form">
+
+        {% if error_message %}
+          
+          {% endif %}
+        <form method="post" action="{% url 'company_login' %}">
+            <h1>company login</h1>
+            {% csrf_token%}
+          <div class="input">
+            <label for="username"> username
+                <input type="text" id="username" name="username" placeholder="Enter the username" required>
+            </label>
+          </div>
+          <div class="input">
+            <label for="password">password
+                <input type="text" id="password" name="password"  placeholder="Enter the password" required >
+            </label>
+          </div>
+            <p>do't have account <a href="{% url 'company_register' %}">register page</a></p>
+            <p>{{error_message}}</p>
+            <button>login</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User View job</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="main-menu">
+        <h1>job Portal</h1>
+        <ul>
+            <li><a href="{% url 'user_home' %}">HOME</a></li>
+            <li><a href="{% url 'view_job' %}">view job post</a></li>
+            <li><a href="{% url 'view_status' %}">view apply status</a></li>
+            <li><a href="{% url 'index' %}">logout</a></li>
+        </ul>
+    </div>
+   <div class="form">
+    <div class="table">
+        <h1>Apply Status</h1>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>job role</th>
+                <th>Company</th>
+                <th>status</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Places</th>
+                
+            </tr>
+            {% for i in data%}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.company}}</td>
+                <td>{{i.status}}</td>
+                <td>{{i.time}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.place}}</td>
+
+            </tr>
+            {% endfor %}
+            
+        </table>
+    </div>
+   </div>
+  
+</body>
+</html>

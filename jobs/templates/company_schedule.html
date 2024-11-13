@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="main-menu">
+        <h1>job portal</h1>
+        <ul>
+            <li><a href="{% url 'user_home' %}">HOME</a></li>
+            <li><a href="{% url 'add_job' %}">Add job post</a></li>
+            <li><a href="{% url 'view_application' %}">view apply status</a></li>
+            <li><a href="{% url 'index' %}">logout</a></li>
+        </ul>
+     </div>
+    <div class="form">
+        <form action="{% url 'shedule'%}" method="post">
+            <h1>Schedule Job</h1>
+            {% csrf_token %}
+            <div class="input">
+                <label for="">Time</label>
+                    <input type="text" name="time">
+                
+                </div>
+                <div class="input">
+                    <label for="">Date</label>
+                        <input type="text" name="date">
+                    
+                </div>
+                <div class="input">
+                    <label for="">Place</label>
+                        <input type="text" name="place">
+                    
+                </div>
+            <button>Add Job</button>
+        </form>
+    </div>
+</body>
+</html>

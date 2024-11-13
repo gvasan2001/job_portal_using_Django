@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "DM Serif Display", serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+body{
+    background: url(../img/banner1.jpg);
+    background-size: cover;
+}
+
+.main {
+    border: 2px solid #fff;
+    width: fit-content;
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(50%);
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+}
+.full-box{
+    background: url(../img/banner.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.btn-div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px;
+}
+
+.btn-div button {
+    padding: 10px 20px;
+    border-radius: 24px;
+    position: relative; /* Ensure button is relative for ::after */
+    overflow: hidden;   /* Clip ::after to button's bounds */
+    z-index: 1;         /* Set the button's z-index */
+    background-color: #f4f4f4; /* Button background */
+    border: none;
+    cursor: pointer;
+}
+
+.btn-div button::after {
+    content: " ";
+    width: 0;
+    height: 100%;
+    background-color: #5C6BC0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 24px;
+    transition: 0.5s;
+    z-index: 0; /* Place ::after beneath the button content */
+}
+
+.card-back button:hover::after {
+    transform: translateX(0) scaleX(1); /* Reveal background on hover */
+}
+
+.card-back button:hover a {
+    color: #fff; /* Change text color on hover */
+}
+
+.card-back button:hover {
+    border: 1px solid #fff; 
+}
+.card-back button a:active{
+    background-color: #8fd491;
+}
+
+.main-menu{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .3);
+    box-shadow: 10px 5px 10px rgba(255, 255, 255, 1);
+}
+.main-menu h1{
+    color: #fff;
+    
+}
+.main-menu a{
+    border:1px solid #4CAF50;
+    text-decoration: none;
+    position: relative;
+    right: 50px;
+    padding: 10px 20px;
+    border-radius: 24px;
+    background-color: #fff;
+    color: #4CAF50;
+}
+.main-menu a:hover{
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.form form{
+    border: 1px solid #000;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(50px);
+    border-radius: 24px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .5);
+}
+.form form h1,.form input,.form button{
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 24px;
+}
+.form button{
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+.form .input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-menu ul{
+    display: flex;
+}
+
+.main-menu ul li{
+    padding: 10px;
+}
+.title{
+    position: relative;
+    top: 400px;
+    letter-spacing: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: fit-content;
+    padding: 10px;
+    border-radius: 24px;
+}
+.table{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(50px);
+    padding: 10px;
+    border-radius: 24px;
+    text-align: center;
+}
+table{
+    border-collapse: collapse;
+}
+table th,table td{
+    border: 1px solid;
+padding: 10px;
+letter-spacing: 1px;
+}
+tbody tr:hover {
+    background-color: #f9f9f9; 
+}
+.img{
+   position: relative;
+   top: 0;
+   margin-right: 50px;
+   /* border-radius: 24px; */
+}
+.img img{
+    border-radius: 24px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company view apply</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="main-menu">
+        <h1>job portal</h1>
+        <ul>
+            <li><a href="{% url 'user_home' %}">HOME</a></li>
+        <li><a href="{% url 'add_job' %}">Add job post</a></li>
+        <li><a href="{% url 'view_application' %}">view apply status</a></li>
+        <li><a href="{% url 'index' %}">logout</a></li>
+        </ul>
+     </div>
+    <div class="form">
+        <div class="table">
+            <h1>User view job</h1>
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Number</th>
+                    <th>Qualification</th>
+                    <th>Address</th>
+                    <th>Jobrole</th>
+                    <th>Apply</th>
+                </tr>
+                {% for i in data %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.phonenumber}}</td>
+                    <td>{{i.qualification}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.jobrole}}</td>
+                    <td><a href="{% url 'shedule'%}">Shedule</a></td>
+                </tr>
+                {% endfor %}
+                
+            </table>
+        </div>
+       </div>
+</body>
+</html>
